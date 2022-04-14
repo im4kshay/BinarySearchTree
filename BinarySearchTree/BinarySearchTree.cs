@@ -9,10 +9,16 @@ namespace BinarySearchTree
     //Creating binary search tree using generics and IComparable to use CompareTo method in program(UC1)
     public class BinarySearchTree<T> where T : IComparable<T>
     {
+        //Initializing variables
+        public int leftCount, rightCount;
+        public bool result = false;
+
+        //Declaring Properties
         public T NodeData { get; set; }
         public BinarySearchTree<T> LeftTree { get; set; }
         public BinarySearchTree<T> RightTree { get; set; }
 
+        //Paramerterized constructor
         public BinarySearchTree(T nodeData)
         {
             this.NodeData = nodeData;
@@ -20,7 +26,6 @@ namespace BinarySearchTree
             this.RightTree = null;
         }
 
-        int leftCount = 0, rightCount = 0;
 
         //Method to check node and add node value to either left or right by comparing(UC1)
         public void Insert(T data)
@@ -50,7 +55,7 @@ namespace BinarySearchTree
                 leftCount++;
                 LeftTree.Display();
             }
-            Console.Write("Binary Tree:{0}", NodeData.ToString() + " " + "\n");
+            Console.Write("Binary Tree:{0}", NodeData.ToString() + " "+ "\n");
             if (this.RightTree != null)
             {
                 rightCount++;
@@ -61,7 +66,55 @@ namespace BinarySearchTree
         //Method to get the size of the binary tree(UC2)
         public void GetSize()
         {
-            Console.WriteLine("Size of the binary tree is : " + (this.leftCount + this.rightCount + 1 ));
+            Console.WriteLine("Size of the binary tree is : " + (1 + this.leftCount + this.rightCount));
         }
+
+        //Method to search the given value in the binary tree(UC3)
+        //public bool IfValueExists(T data, BinarySearchTree<T> node)
+        //{
+        //    if (node == null)
+        //    {
+        //        return false;
+        //    }
+        //    if (node.NodeData.Equals(data))
+        //    {
+        //        result = true;
+        //    }
+        //    else if (data.CompareTo(node.NodeData) < 0)
+        //    {
+        //        IfValueExists(data, node.LeftTree);
+        //    }
+        //    else
+        //    {
+        //        IfValueExists(data, node.RightTree);
+        //    }
+        //    return result;
+        //}
+        public bool IfValueExists(T data, BinarySearchTree<T> node)
+        {
+            if (node == null)
+            {
+                return false;
+            }
+            if (node.NodeData.Equals(data))
+            {
+                Console.WriteLine("Found the element in BST: " + node.NodeData);
+                result = true;
+            }
+            else
+            {
+                Console.WriteLine("Current element is {0} in BST", node.NodeData);
+            }
+            if (data.CompareTo(node.NodeData) < 0)
+            {
+                IfValueExists(data, node.LeftTree);
+            }
+            if (data.CompareTo(node.NodeData) > 0)
+            {
+                IfValueExists(data, node.RightTree);
+            }
+            return result;
+        }
+
     }
 }

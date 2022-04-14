@@ -25,7 +25,7 @@ namespace BinarySearchTree
             binaryTree.Insert(65);
             binaryTree.Insert(3);
             binaryTree.Insert(16);
-            binaryTree.Insert(6);
+            binaryTree.Insert(63);
             binaryTree.Insert(67);
 
             //Display inputs
@@ -40,6 +40,12 @@ namespace BinarySearchTree
             Console.WriteLine("--------------------------------");
 
             binaryTree.GetSize();
+
+            Console.WriteLine("--------------------------------");
+            Console.WriteLine("Ability to search 63 in the Binary Tree");
+            Console.WriteLine("--------------------------------");
+            bool result = binaryTree.IfValueExists(63, binaryTree);
+            Console.WriteLine(result);
 
             Console.WriteLine("--------------------------------");
 
