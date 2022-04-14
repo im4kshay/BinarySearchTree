@@ -12,6 +12,8 @@ namespace BinarySearchTree
         {
             //Displaying Welcome Message
             Console.WriteLine("=-=-=-=-=-=-=-=Welcome To The Binary Search Tree Program=-=-=-=-=-=-=-=");
+
+            Console.ReadLine();
         }
     }
 }
