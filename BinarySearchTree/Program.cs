@@ -17,6 +17,16 @@ namespace BinarySearchTree
             BinarySearchTree<int> binaryTree = new BinarySearchTree<int>(56);
             binaryTree.Insert(30);
             binaryTree.Insert(70);
+            binaryTree.Insert(22);
+            binaryTree.Insert(40);
+            binaryTree.Insert(60);
+            binaryTree.Insert(95);
+            binaryTree.Insert(11);
+            binaryTree.Insert(65);
+            binaryTree.Insert(3);
+            binaryTree.Insert(16);
+            binaryTree.Insert(6);
+            binaryTree.Insert(67);
 
             //Display inputs
             Console.WriteLine("--------------------------------");
@@ -24,6 +34,12 @@ namespace BinarySearchTree
             Console.WriteLine("--------------------------------");
 
             binaryTree.Display();
+
+            Console.WriteLine("--------------------------------");
+            Console.WriteLine("Checking Size Of Binary Search Tree");
+            Console.WriteLine("--------------------------------");
+
+            binaryTree.GetSize();
 
             Console.WriteLine("--------------------------------");
 
